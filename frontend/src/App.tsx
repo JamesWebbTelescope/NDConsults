@@ -12,7 +12,7 @@ function App() {
       const res = await fetch('https://ndconsults.test.makeplans.net/api/v1/services',
         {method: 'GET',
         headers: {
-          'Content-Type': 'application/json',
+          'User-Agent': 'http://ndconsults.makeplans.com',
           'Accept': 'application/json'
         }
       })
@@ -45,10 +45,7 @@ function App() {
           Count is {count}
         </button>
         <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
+          <h1>MakePlans Services</h1>
         </div>
         <button
           className="counter"
