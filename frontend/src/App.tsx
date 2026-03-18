@@ -7,6 +7,23 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
+  async function getServices() {
+    try {
+      const res = await fetch('https://ndconsults.test.makeplans.net/api/v1/services',
+        {method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      })
+      const data = await res.json()
+      console.log('API Response:', data)
+    } catch (error) {
+      console.error('Error fetching API:', error)
+    }
+  }
+
+
   return (
     <>
       <section id="center">
@@ -26,6 +43,18 @@ function App() {
           onClick={() => setCount((count) => count + 1)}
         >
           Count is {count}
+        </button>
+        <div>
+          <h1>Get started</h1>
+          <p>
+            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
+          </p>
+        </div>
+        <button
+          className="counter"
+          onClick={() => getServices()}
+        >
+          Try MakePlans API
         </button>
       </section>
 
