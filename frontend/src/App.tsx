@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-import getServices from './components/ApiServices'
+import getServices, { goToBookingPage } from './components/ApiServices'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -38,6 +38,15 @@ function App() {
           onClick={() => getServices()}
         >
           Try MakePlans API
+        </button>
+        <div>
+          <h1>MakePlans Services</h1>
+        </div>
+        <button
+          className="counter"
+          onClick={() => goToBookingPage()}
+        >
+          Go to Booking Page
         </button>
       </section>
 
