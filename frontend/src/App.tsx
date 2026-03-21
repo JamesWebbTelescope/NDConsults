@@ -13,8 +13,7 @@ function App() {
         {method: 'GET',
         headers: {
           'User-Agent': 'https://jameswebbtelescope.github.io',
-          'Accept': 'application/json',
-          'Authorization' : 'Bearer 95520f7314855196c0e734f701fde0aa25ef2859'
+          'Accept': 'application/json'
         }
       })
       const data = await res.json()
