@@ -9,11 +9,12 @@ function App() {
 
   async function getServices() {
     try {
-      const res = await fetch('https://ndconsults.test.makeplans.net/api/v1/services',
+      const res = await fetch('https://ndconsults.makeplans.com/services',
         {method: 'GET',
         headers: {
-          'User-Agent': 'http://ndconsults.makeplans.com',
-          'Accept': 'application/json'
+          'User-Agent': 'http://localhost:5173/',
+          'Accept': 'application/json',
+          'Authorization' : 'Bearer 95520f7314855196c0e734f701fde0aa25ef2859'
         }
       })
       const data = await res.json()
