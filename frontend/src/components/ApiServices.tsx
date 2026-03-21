@@ -13,3 +13,8 @@ export default async function getServices() {
       console.error('Error fetching API:', error)
     }
   }
+
+export const goToBookingPage = () => {
+  const bookingUrl = `https://ndconsults.makeplans.com/`
+  window.open(bookingUrl, '_blank')
+}
