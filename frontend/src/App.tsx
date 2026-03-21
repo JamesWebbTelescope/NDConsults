@@ -12,7 +12,7 @@ function App() {
       const res = await fetch('https://ndconsults.makeplans.com/services',
         {method: 'GET',
         headers: {
-          'User-Agent': 'http://localhost:5173/',
+          'User-Agent': 'Postman',
           'Accept': 'application/json',
           'Authorization' : 'Bearer 95520f7314855196c0e734f701fde0aa25ef2859'
         }
