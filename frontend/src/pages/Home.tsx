@@ -9,10 +9,10 @@ export default function Home() {
                        bg-linear-to-r from-green-200 via-green-400 to-green-800
                        bg-size-[200%_200%] animate-gradient-colors text-glow
                        leading-tight">
-          Raspberry Pi Tutorials
+          Welcome to NDConsults
         </h2>
         <p className="text-green-400 max-w-xl mb-8">
-          Every type of tutorial imaginable for the Raspberry Pi!
+          We think outside the box.
         </p>
  
       </section>
