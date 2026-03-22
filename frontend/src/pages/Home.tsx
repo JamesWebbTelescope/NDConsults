@@ -1,4 +1,5 @@
 import Layout from "../components/Layout";
+import Profiles from "../components/Profiles";
 // import { useNavigate } from "react-router-dom";
 export default function Home() {
   // const navigate = useNavigate();
@@ -14,6 +15,7 @@ export default function Home() {
         <p className="text-green-400 max-w-xl mb-8">
           We think outside the box.
         </p>
+        <Profiles />
  
       </section>
     </Layout>
