@@ -1,9 +1,9 @@
 {
-  "name": "raspberrypitutorials",
+  "name": "ndconsults",
   "private": false,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "https://jameswebbtelescope.github.io/RasbiTuts/",
+  "homepage": "https://jameswebbtelescope.github.io/NDConsults",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
@@ -17,9 +17,9 @@
     "bleach": "^0.3.0",
     "dompurify": "^3.3.0",
     "html-react-parser": "^5.2.10",
-    "react": "^19.2.0",
+    "react": "^19.2.4",
     "react-bootstrap": "^2.10.10",
-    "react-dom": "^19.2.0",
+    "react-dom": "^19.2.4",
     "react-player": "^3.4.0",
     "react-router-dom": "^7.9.6",
     "react-youtube": "^10.1.0",
