@@ -16,15 +16,15 @@ export default function Home() {
           We think outside the box.
         </p>
         <Profiles />
- 
-      </section>
-      <div className="flex justify-center mt-10">
+        <div className="flex justify-center mt-10">
         <button className="px-6 py-3 bg-green text-white font-semibold rounded-lg hover:bg-green-400 transition-colors duration-300"
           onClick={() =>  goToBookingPage()}>
           Book a Consultation
         </button>
 
       </div>
+ 
+      </section>
     </Layout>
   );
 }
