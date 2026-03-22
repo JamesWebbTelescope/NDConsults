@@ -2,9 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
+import profile1 from './assets/fil_oo2.jpg'
 import './App.css'
-import getServices, { goToBookingPage } from
-
+import getServices, { goToBookingPage } from './ApiServices'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -30,6 +30,9 @@ function App() {
         >
           Count is {count}
         </button>
+        <div className = "hero">
+          <img src={profile1} className="base" alt="Viktor From" />
+        </div>
         <div>
           <h1>MakePlans Services</h1>
         </div>
