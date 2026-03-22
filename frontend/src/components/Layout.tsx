@@ -1,130 +1,20 @@
-import reactLogo from '../assets/react.svg'
-import viteLogo from '../assets/vite.svg'
-import profile1 from '../assets/fil_002.jpg'
-import './Layout.css'
-import getServices, { goToBookingPage } from './ApiServices'
-function App() {
 
-  
+import type { ReactNode } from "react";
+import Header from "./Header";
 
-  return (
-    <>
-      <section id="center">
-        <div className = "hero">
-          <img src={profile1} className="base" alt="Viktor From" />
-          <p className="caption">
-            Viktor From
-            Embedded Software Engineer
-            C++, Python
-            </p>
-        </div>
-        <div>
-          <h1>NDConsults</h1>
-        </div>
-        <button
-          className="counter"
-          onClick={() => getServices()}
-        >
-          Try MakePlans API
-        </button>
-        <div>
-          <h1>MakePlans Services</h1>
-        </div>
-        <button
-          className="counter"
-          onClick={() => goToBookingPage()}
-        >
-          Go to Booking Page
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+interface LayoutProps {
+  children: ReactNode;
 }
 
-export default App
+export default function Layout({ children }: LayoutProps) {
+  return (
+    <div className="bg-black text-white">
+      <h1 >
+        <Header />
+        <main>
+          {children}
+        </main>
+      </h1>
+    </div>
+  );
+}
