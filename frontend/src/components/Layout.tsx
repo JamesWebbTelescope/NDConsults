@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-import getServices, { goToBookingPage } from './components/ApiServices'
+import getServices, { goToBookingPage } from
 
 function App() {
   const [count, setCount] = useState(0)
