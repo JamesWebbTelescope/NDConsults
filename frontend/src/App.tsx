@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 
 export default function App() {
   return (
-    <HashRouter>
+    <HashRouter basename="/NDConsults/">
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
