@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 //import { getToken } from "../services/authService"; //clearToken
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const holoLinkClass = `
     relative
@@ -52,34 +52,6 @@ export default function Navbar() {
       <a href="/RasbiTuts/" className={holoLinkClass}>
         Home
       </a>
-      <a href="/RasbiTuts/#/students" className={holoLinkClass}>
-        Students
-      </a>
-      {
-        <button
-          onClick={() => {
-            // clearToken();
-            navigate("/RasbiTuts/#/students");
-          }}
-          className={holoLinkClass}
-        >
-          {}
-        </button>
-      }
-      <a href="/RasbiTuts/#/tutorials" className={holoLinkClass}>
-        Tutorials
-      </a>
-      {
-        <button
-          onClick={() => {
-            // clearToken();
-            navigate("/RasbiTuts/#/tutorials");
-          }}
-          className={holoLinkClass}
-        >
-          {}
-        </button>
-      }
     </nav>
   );
 }
