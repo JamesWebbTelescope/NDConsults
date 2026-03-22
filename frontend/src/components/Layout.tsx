@@ -12,9 +12,14 @@ function App() {
       <section id="center">
         <div className = "hero">
           <img src={profile1} className="base" alt="Viktor From" />
+          <p className="caption">
+            Viktor From
+            Embedded Software Engineer
+            C++, Python
+            </p>
         </div>
         <div>
-          <h1>MakePlans Services</h1>
+          <h1>NDConsults</h1>
         </div>
         <button
           className="counter"
