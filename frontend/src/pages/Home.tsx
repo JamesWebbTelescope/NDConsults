@@ -1,3 +1,4 @@
+import { goToBookingPage } from "../components/ApiServices";
 import Layout from "../components/Layout";
 import Profiles from "../components/Profiles";
 // import { useNavigate } from "react-router-dom";
@@ -17,6 +18,13 @@ export default function Home() {
         <Profiles />
  
       </section>
+      <div className="flex justify-center mt-10">
+        <button className="px-6 py-3 bg-green text-white font-semibold rounded-lg hover:bg-green-400 transition-colors duration-300"
+          onClick={() =>  goToBookingPage()}>
+          Book a Consultation
+        </button>
+
+      </div>
     </Layout>
   );
 }
