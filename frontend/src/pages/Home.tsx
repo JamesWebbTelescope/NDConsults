@@ -6,13 +6,12 @@ export default function Home() {
   return (
     <Layout>
 <section className="flex flex-col items-center justify-center text-center py-20">
-        <h2 className="text-4xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text 
-                       bg-linear-to-r from-green-200 via-green-400 to-green-800
+        <h2 className="text-4xl md:text-6xl font-bold mb-4 text-black bg-clip-text 
                        bg-size-[200%_200%] animate-gradient-colors text-glow
                        leading-tight">
           Welcome to NDConsults
         </h2>
-        <p className="text-green-400 max-w-xl mb-8">
+        <p className="text-black max-w-xl mb-8">
           We think outside the box.
         </p>
         <Profiles />
