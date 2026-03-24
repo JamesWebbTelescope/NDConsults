@@ -6,7 +6,6 @@ import Dropdown from "react-bootstrap/Dropdown";
 // import { useNavigate } from "react-router-dom";
 
 interface DisplayTutorial {
-    id: number;
     start: string;
     end: string;
 }
@@ -46,14 +45,12 @@ export default function Home() {
                 console.log("Welcome to the tutorials page")
                 for(const tutorial of timeslots){
                     console.log(`Getting all tutorials`)
-                    const time = timeslots.find(item => item.id === tutorial.id);
+                    const time = timeslots.find(item => item.formatted_timestamp === tutorial.formatted_timestamp);
                     if(time){
                         results.push({
-                                    id: time.id,
                                     start: time.formatted_timestamp,
                                     end: time.formatted_timestamp_end
                                 });
-                            console.log(time.id)
                             console.log(time.formatted_timestamp)
                             console.log(time.formatted_timestamp_end)
                             }
