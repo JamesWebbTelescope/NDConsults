@@ -1,9 +1,68 @@
+import { useEffect, useState } from "react";
 import { getTimeSlots, goToBookingPage } from "../components/ApiServices";
 import Layout from "../components/Layout";
 import Profiles from "../components/Profiles";
+import Dropdown from "react-bootstrap/Dropdown";
 // import { useNavigate } from "react-router-dom";
+
+interface DisplayTutorial {
+    id: number;
+    start: string;
+    end: string;
+}
+
+const holoLinkClass = `
+    relative
+    px-4 py-2
+    text-green
+    font-semibold
+    rounded-lg
+    transition-all
+    duration-300
+    hover:text-green-400
+    hover:drop-shadow-[0_0_15px_rgba(0,255,255,0.9)]
+    before:absolute
+    before:inset-0
+    before:rounded
+    before:bg-green-400
+    before:opacity-20
+    before:blur-xl
+    before:scale-110
+    before:transition-all
+    before:duration-300
+    hover:before:opacity-50
+    hover:before:scale-80
+    before:pointer-events-none
+  `;
+
 export default function Home() {
+   const [timeslots, setTimeSlotData] = useState<DisplayTutorial[]>([])
+   const [display, updateDisplay] = useState(false)
+   const results: DisplayTutorial[] = [];
   // const navigate = useNavigate();
+   useEffect(() => {
+            const fetchData = async () => {
+                const timeslots = await getTimeSlots();
+                console.log("Welcome to the tutorials page")
+                for(const tutorial of timeslots){
+                    console.log(`Getting all tutorials`)
+                    const time = timeslots.find(item => item.id === tutorial.id);
+                    if(time){
+                        results.push({
+                                    id: time.id,
+                                    start: time.formatted_timestamp,
+                                    end: time.formatted_timestamp_end
+                                });
+                            console.log(time.id)
+                            console.log(time.formatted_timestamp)
+                            console.log(time.formatted_timestamp_end)
+                            }
+                    }           
+                setTimeSlotData(results);
+            };
+            fetchData();
+        }, []);
+
   return (
     <Layout>
 <section className="flex flex-col items-center justify-center text-center py-20">
@@ -25,9 +84,19 @@ export default function Home() {
           onClick={() =>  getTimeSlots()}>
           Get available services
         </button>
-
-
-      </div>
+         <Dropdown>
+                <Dropdown.Header>Tutorials</Dropdown.Header>
+                    {timeslots.map((item, index) => (
+                        <Dropdown.Menu show key={index}>
+                        <Dropdown.Item className={holoLinkClass} onClick={() => {
+                                    // clearToken()
+                                    updateDisplay(!display)
+                                }}>{item.id}
+                        </Dropdown.Item>
+                        </Dropdown.Menu>
+                        ))}
+            </Dropdown>
+        </div>
  
       </section>
     </Layout>

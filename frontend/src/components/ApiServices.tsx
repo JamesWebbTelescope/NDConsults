@@ -9,8 +9,10 @@ export default async function getServices() {
       })
       const data = await res.json()
       console.log('API Response:', data)
+      return Array.isArray(data) ? data: []
     } catch (error) {
       console.error('Error fetching API:', error)
+      return []
     }
   }
 
@@ -25,8 +27,11 @@ export default async function getServices() {
       })
       const data = await res.json()
       console.log('API Response:', data)
+      return Array.isArray(data) ? data: []
     } catch (error) {
       console.error('Error fetching API:', error)
+      return []
+
     }
   }
 
