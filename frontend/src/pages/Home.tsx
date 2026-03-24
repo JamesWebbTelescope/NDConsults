@@ -76,16 +76,18 @@ export default function Home() {
         </p>
         <Profiles />
         <div className="flex justify-center mt-10">
-        <button className="px-6 py-3 bg-green text-white font-semibold rounded-lg hover:bg-green-400 transition-colors duration-300"
+        <button className="px-6 py-3 bg-green text-white font-semibold rounded-lg hover:bg-blue-400 transition-colors duration-300"
           onClick={() =>  goToBookingPage()}>
           Book a Consultation
         </button>
-        <button className="px-6 py-3 bg-green text-white font-semibold rounded-lg hover:bg-green-400 transition-colors duration-300"
+        <button className="px-6 py-3 bg-green text-white font-semibold rounded-lg hover:bg-blue-400 transition-colors duration-300"
           onClick={() =>  getTimeSlots()}>
           Get available services
         </button>
+        </div>
+        <div className="overlay-box relative text-center bg-red-800/70 text-green-300 uppercase text-sm font-semibold tracking-wide">
          <Dropdown>
-                <Dropdown.Header>Tutorials</Dropdown.Header>
+                <Dropdown.Header>Available timeslots</Dropdown.Header>
                     {timeslots.map((item, index) => (
                         <Dropdown.Menu show key={index}>
                         <Dropdown.Item className={holoLinkClass} onClick={() => {
