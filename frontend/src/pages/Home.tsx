@@ -1,4 +1,4 @@
-import getServices, { goToBookingPage } from "../components/ApiServices";
+import { getTimeSlots, goToBookingPage } from "../components/ApiServices";
 import Layout from "../components/Layout";
 import Profiles from "../components/Profiles";
 // import { useNavigate } from "react-router-dom";
@@ -22,7 +22,7 @@ export default function Home() {
           Book a Consultation
         </button>
         <button className="px-6 py-3 bg-green text-white font-semibold rounded-lg hover:bg-green-400 transition-colors duration-300"
-          onClick={() =>  getServices()}>
+          onClick={() =>  getTimeSlots()}>
           Get available services
         </button>
 
