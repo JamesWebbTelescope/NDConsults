@@ -38,12 +38,12 @@ Please change the parent <Route path="${q}"> to <Route path="${q==="/"?"*":`${q}
     rounded-lg
     transition-all
     duration-300
-    hover:text-green-400
+    hover:text-blue-400
     hover:drop-shadow-[0_0_15px_rgba(0,255,255,0.9)]
     before:absolute
     before:inset-0
     before:rounded
-    before:bg-green-400
+    before:bg-blue-400
     before:opacity-20
     before:blur-xl
     before:scale-110
@@ -54,5 +54,5 @@ Please change the parent <Route path="${q}"> to <Route path="${q==="/"?"*":`${q}
     before:pointer-events-none
   `;function oS(){const[u,c]=O.useState([]),[f,r]=O.useState(!1),s=[];return O.useEffect(()=>{(async()=>{const p=await bv();console.log("Welcome to the tutorials page");for(const y of p){console.log("Getting all tutorials");const h=p.find(v=>v.id===y.id);h&&(s.push({id:h.id,start:h.formatted_timestamp,end:h.formatted_timestamp_end}),console.log(h.id),console.log(h.formatted_timestamp),console.log(h.formatted_timestamp_end))}c(s)})()},[]),nt.jsx($g,{children:nt.jsxs("section",{className:"flex flex-col items-center justify-center text-center py-20",children:[nt.jsx("h2",{className:`text-4xl md:text-6xl font-bold mb-4 text-black bg-clip-text \r
                        bg-size-[200%_200%] animate-gradient-colors text-glow\r
-                       leading-tight`,children:"Welcome to NDConsults"}),nt.jsx("p",{className:"text-black max-w-xl mb-8",children:"We think outside the box."}),nt.jsx(kg,{}),nt.jsxs("div",{className:"flex justify-center mt-10",children:[nt.jsx("button",{className:"px-6 py-3 bg-blue text-white font-semibold rounded-lg hover:bg-blue-400 transition-colors duration-300",onClick:()=>Vg(),children:"Book a Consultation"}),nt.jsx("button",{className:"px-6 py-3 bg-blue text-white font-semibold rounded-lg hover:bg-blue-400 transition-colors duration-300",onClick:()=>bv(),children:"Get available services"})]}),nt.jsx("div",{className:"overlay-box relative text-center bg-blue-400 text-black uppercase text-sm font-semibold tracking-wide",children:nt.jsxs(Ki,{children:[nt.jsx(Ki.Header,{children:"Available timeslots"}),u.map((d,p)=>nt.jsx(Ki.Menu,{show:!0,children:nt.jsx(Ki.Item,{className:rS,onClick:()=>{r(!f)},children:d.id})},p))]})})]})})}function sS(){const u=Ii.c(1);let c;return u[0]===Symbol.for("react.memo_cache_sentinel")?(c=nt.jsx(wg,{children:nt.jsx(sg,{children:nt.jsx(Iv,{path:"/",element:nt.jsx(oS,{})})})}),u[0]=c):c=u[0],c}y0.createRoot(document.getElementById("root")).render(nt.jsx(O.StrictMode,{children:nt.jsx(sS,{})}));
-//# sourceMappingURL=index-CNXscmJe.js.map
+                       leading-tight`,children:"Welcome to NDConsults"}),nt.jsx("p",{className:"text-black max-w-xl mb-8",children:"We think outside the box."}),nt.jsx(kg,{}),nt.jsxs("div",{className:"flex justify-center mt-10",children:[nt.jsx("button",{className:"px-6 py-3 bg-blue text-white font-semibold rounded-lg hover:bg-blue-400 transition-colors duration-300",onClick:()=>Vg(),children:"Book a Consultation"}),nt.jsx("button",{className:"px-6 py-3 bg-blue text-white font-semibold rounded-lg hover:bg-blue-400 transition-colors duration-300",onClick:()=>bv(),children:"Get available services"})]}),nt.jsx("div",{className:"overlay-box relative text-center bg-blue-400 text-black uppercase text-sm font-semibold tracking-wide",children:nt.jsxs(Ki,{children:[nt.jsx(Ki.Header,{children:"Available timeslots"}),u.map((d,p)=>nt.jsx(Ki.Menu,{show:!0,children:nt.jsx(Ki.Item,{className:rS,onClick:()=>{r(!f)},children:d.start})},p))]})})]})})}function sS(){const u=Ii.c(1);let c;return u[0]===Symbol.for("react.memo_cache_sentinel")?(c=nt.jsx(wg,{children:nt.jsx(sg,{children:nt.jsx(Iv,{path:"/",element:nt.jsx(oS,{})})})}),u[0]=c):c=u[0],c}y0.createRoot(document.getElementById("root")).render(nt.jsx(O.StrictMode,{children:nt.jsx(sS,{})}));
+//# sourceMappingURL=index-CdKDS2xI.js.map

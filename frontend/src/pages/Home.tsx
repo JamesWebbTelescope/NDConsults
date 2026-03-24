@@ -19,12 +19,12 @@ const holoLinkClass = `
     rounded-lg
     transition-all
     duration-300
-    hover:text-green-400
+    hover:text-blue-400
     hover:drop-shadow-[0_0_15px_rgba(0,255,255,0.9)]
     before:absolute
     before:inset-0
     before:rounded
-    before:bg-green-400
+    before:bg-blue-400
     before:opacity-20
     before:blur-xl
     before:scale-110
@@ -93,7 +93,7 @@ export default function Home() {
                         <Dropdown.Item className={holoLinkClass} onClick={() => {
                                     // clearToken()
                                     updateDisplay(!display)
-                                }}>{item.id}
+                                }}>{item.start}
                         </Dropdown.Item>
                         </Dropdown.Menu>
                         ))}
