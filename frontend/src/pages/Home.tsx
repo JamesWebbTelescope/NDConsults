@@ -54,6 +54,7 @@ export default function Home() {
                                     start: time.formatted_timestamp,
                                     end: time.formatted_timestamp_end
                                 });
+                            console.log(`Found matching time slot for tutorial: ${tutorial.formatted_timestamp}`)
                             console.log(time.formatted_timestamp)
                             console.log(time.formatted_timestamp_end)
                             }
