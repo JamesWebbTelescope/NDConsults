@@ -50,7 +50,7 @@ export default function Home() {
                     console.log(`Getting all tutorials`)
                     const time = timeslots.find(item => item.formatted_timestamp === tutorial.formatted_timestamp);
                     const serv = services.find(item => item.title === service.title);
-                    if(time){
+                    if(time && serv){
                         results.push({
                                     start: time.formatted_timestamp,
                                     end: time.formatted_timestamp_end,
