@@ -6,7 +6,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 // import { useNavigate } from "react-router-dom";
 
 interface DisplayService {
-    service?: string;  
+    service: string;  
     start: string;
     end: string;
 }
