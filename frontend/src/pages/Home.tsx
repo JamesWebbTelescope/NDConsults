@@ -5,8 +5,8 @@ import Profiles from "../components/Profiles";
 import Dropdown from "react-bootstrap/Dropdown";
 // import { useNavigate } from "react-router-dom";
 
-interface DisplayTutorial {
-    services: string;
+interface DisplayService {
+    service?: string;  
     start: string;
     end: string;
 }
@@ -36,29 +36,32 @@ const holoLinkClass = `
   `;
 
 export default function Home() {
-   const [timeslots, setTimeSlotData] = useState<DisplayTutorial[]>([])
+   const [timeslots, setTimeSlotData] = useState<DisplayService[]>([])
    const [display, updateDisplay] = useState(false)
-   const results: DisplayTutorial[] = [];
+   const results: DisplayService[] = [];
   // const navigate = useNavigate();
    useEffect(() => {
             const fetchData = async () => {
-                const services = await getServices();
                 const timeslots = await getTimeSlots();
+                const services = await getServices();
                 console.log("Welcome to the tutorials page")
                 for(const tutorial of timeslots){
+                  for(const service of services){
                     console.log(`Getting all tutorials`)
                     const time = timeslots.find(item => item.formatted_timestamp === tutorial.formatted_timestamp);
+                    const serv = services.find(item => item.service === service.title);
                     if(time){
                         results.push({
-                                    services: services.find(item => item.id === tutorial.service_id)?.name || "Unknown Service",
                                     start: time.formatted_timestamp,
-                                    end: time.formatted_timestamp_end
+                                    end: time.formatted_timestamp_end,
+                                    service: serv?.title
                                 });
                             console.log(`Found matching time slot for tutorial: ${tutorial.formatted_timestamp}`)
                             console.log(time.formatted_timestamp)
                             console.log(time.formatted_timestamp_end)
                             }
-                    }           
+                    }
+                }               
                 setTimeSlotData(results);
             };
             fetchData();
@@ -80,10 +83,6 @@ export default function Home() {
         <button className="px-6 py-3 bg-blue text-white font-semibold rounded-lg hover:bg-blue-400 transition-colors duration-300"
           onClick={() =>  goToBookingPage()}>
           Book a Consultation
-        </button>
-        <button className="px-6 py-3 bg-blue text-white font-semibold rounded-lg hover:bg-blue-400 transition-colors duration-300"
-          onClick={() =>  getTimeSlots()}>
-          Get available services
         </button>
         </div>
         <div className="overlay-box relative text-center bg-blue-400 text-black uppercase text-sm font-semibold tracking-wide">
