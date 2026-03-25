@@ -49,7 +49,7 @@ export default function Home() {
                   for(const service of services){
                     console.log(`Getting all tutorials`)
                     const time = timeslots.find(item => item.formatted_timestamp === tutorial.formatted_timestamp);
-                    const serv = services.find(item => item.service === service.title);
+                    const serv = services.find(item => item.title === service.title);
                     if(time){
                         results.push({
                                     start: time.formatted_timestamp,
