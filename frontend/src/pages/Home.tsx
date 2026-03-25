@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { getTimeSlots, goToBookingPage } from "../components/ApiServices";
+import getServices, { getTimeSlots, goToBookingPage } from "../components/ApiServices";
 import Layout from "../components/Layout";
 import Profiles from "../components/Profiles";
 import Dropdown from "react-bootstrap/Dropdown";
 // import { useNavigate } from "react-router-dom";
 
 interface DisplayTutorial {
+    services: string;
     start: string;
     end: string;
 }
@@ -41,6 +42,7 @@ export default function Home() {
   // const navigate = useNavigate();
    useEffect(() => {
             const fetchData = async () => {
+                const services = await getServices();
                 const timeslots = await getTimeSlots();
                 console.log("Welcome to the tutorials page")
                 for(const tutorial of timeslots){
@@ -48,6 +50,7 @@ export default function Home() {
                     const time = timeslots.find(item => item.formatted_timestamp === tutorial.formatted_timestamp);
                     if(time){
                         results.push({
+                                    services: services.find(item => item.id === tutorial.service_id)?.name || "Unknown Service",
                                     start: time.formatted_timestamp,
                                     end: time.formatted_timestamp_end
                                 });
