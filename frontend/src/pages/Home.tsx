@@ -54,9 +54,9 @@ export default function Home() {
                         results.push({
                                     start: time.formatted_timestamp,
                                     end: time.formatted_timestamp_end,
-                                    service: serv?.title
+                                    service: serv.title
                                 });
-                            console.log(`Found matching time slot for service: ${serv?.title}`)
+                            console.log(`Found matching time slot for service: ${serv.title}`)
                             console.log(time.formatted_timestamp)
                             console.log(time.formatted_timestamp_end)
                             }
