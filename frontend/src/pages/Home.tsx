@@ -75,7 +75,7 @@ export default function Home() {
         </p>
         <Profiles />
         <div className="flex justify-center mt-10">
-        <button className="px-6 py-3 bg-blue text-white font-semibold rounded-lg hover:bg-blue-400 transition-colors duration-300"
+        <button className="p-4 px-6 py-3 bg-blue-400 text-white font-semibold rounded-lg"
           onClick={() =>  goToBookingPage()}>
           Book a Consultation
         </button>
