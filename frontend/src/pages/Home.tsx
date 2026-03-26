@@ -74,13 +74,13 @@ export default function Home() {
           We think outside the box.
         </p>
         <Profiles />
-        <div className="flex justify-center mt-10">
-        <button className="p-4 px-6 py-6 bg-blue-400 text-white font-semibold rounded-lg"
+        <div className="flex relative px-6 py-12 justify-center mt-10">
+        <button className="p-4 relative px-4 py-4 bg-blue-400 text-white font-semibold rounded-lg hover:text-yellow-400 duration-300"
           onClick={() =>  goToBookingPage()}>
           Book a Consultation
         </button>
         </div>
-        <div className="overlay-box relative text-center bg-blue-400 text-black uppercase text-sm font-semibold tracking-wide">
+        <div className="overlay-box text-center bg-blue-400 text-black uppercase text-sm font-semibold tracking-wide">
          <Dropdown>
                 <Dropdown.Header>Available timeslots</Dropdown.Header>
                     {timeslots.map((item, index) => (
