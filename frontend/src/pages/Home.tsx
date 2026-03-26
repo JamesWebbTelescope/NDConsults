@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import getServices, { getTimeSlots, goToBookingPage } from "../components/ApiServices";
+import { getTimeSlots, goToBookingPage } from "../components/ApiServices";
 import Layout from "../components/Layout";
 import Profiles from "../components/Profiles";
 import Dropdown from "react-bootstrap/Dropdown";
@@ -43,23 +43,18 @@ export default function Home() {
    useEffect(() => {
             const fetchData = async () => {
                 const timeslots = await getTimeSlots();
-                const services = await getServices();
                 console.log("Welcome to the tutorials page")
-                for(const tutorial of timeslots){
-                  for(const service of services){
-                    console.log(`Getting all tutorials`)
-                    const time = timeslots.find(item => item.formatted_timestamp === tutorial.formatted_timestamp);
-                    const serv = services.find(item => item.title === service.title);
-                    if(time && serv){
-                        results.push({
-                                    start: time.formatted_timestamp,
-                                    end: time.formatted_timestamp_end,
-                                    service: serv.title
-                                });
-                            console.log(`Found matching time slot for service: ${serv.title}`)
-                            console.log(time.formatted_timestamp)
-                            console.log(time.formatted_timestamp_end)
-                            }
+                for(const timeslot of timeslots){
+                  console.log(`Getting all tutorials`)
+                  const time = timeslots.find(item => item.formatted_timestamp === timeslot.formatted_timestamp);
+                  if(time){
+                      results.push({
+                                  start: time.formatted_timestamp,
+                                  end: time.formatted_timestamp_end,
+                                  service: "Free Consultation"
+                              });
+                          console.log(time.formatted_timestamp)
+                          console.log(time.formatted_timestamp_end)
                     }
                 }               
                 setTimeSlotData(results);
