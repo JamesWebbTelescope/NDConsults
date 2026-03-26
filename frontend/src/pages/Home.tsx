@@ -88,6 +88,11 @@ export default function Home() {
                         <Dropdown.Item className={holoLinkClass} onClick={() => {
                                     // clearToken()
                                     updateDisplay(!display)
+                                }}>{item.service}
+                        </Dropdown.Item>
+                        <Dropdown.Item className={holoLinkClass} onClick={() => {
+                                    // clearToken()
+                                    updateDisplay(!display)
                                 }}>{item.start}
                         </Dropdown.Item>
                         </Dropdown.Menu>
