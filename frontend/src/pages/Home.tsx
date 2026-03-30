@@ -11,7 +11,7 @@ interface DisplayService {
     end: string;
 }
 
-const holoLinkClass = `
+/*const holoLinkClass = `
     relative
     px-4 py-2
     text-green
@@ -33,7 +33,7 @@ const holoLinkClass = `
     hover:before:opacity-50
     hover:before:scale-80
     before:pointer-events-none
-  `;
+  `;*/
 
 export default function Home() {
    const [timeslots, setTimeSlotData] = useState<DisplayService[]>([])
@@ -85,12 +85,12 @@ export default function Home() {
                 <Dropdown.Header>Available timeslots</Dropdown.Header>
                     {timeslots.map((item, index) => (
                         <Dropdown.Menu show key={index}>
-                        <Dropdown.Item className={holoLinkClass} onClick={() => {
+                        <Dropdown.Item className="text-black" onClick={() => {
                                     // clearToken()
                                     updateDisplay(!display)
                                 }}>{item.service}
                         </Dropdown.Item>
-                        <Dropdown.Item className={holoLinkClass} onClick={() => {
+                        <Dropdown.Item className="text-black" onClick={() => {
                                     // clearToken()
                                     updateDisplay(!display)
                                 }}>{item.start}
